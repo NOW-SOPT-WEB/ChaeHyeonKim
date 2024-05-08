@@ -3,10 +3,11 @@ import CardHandler from '../components/card/CardHandler';
 import Header from '../components/header/Header';
 import LevelHandler from '../components/level/LevelHandler';
 import SuccessModal from '../components/modal/SuccessModal';
+import LEVEL from './../constants/Level';
 
 export default function GamePage() {
     const [score, setScore] = useState(0);
-    const [level, setLevel] = useState(5);
+    const [level, setLevel] = useState(LEVEL[0].level);
     const [modalOpen, setModalOpen] = useState(false);
     const [shuffle, setShuffle] = useState(false);
 
@@ -20,7 +21,7 @@ export default function GamePage() {
     };
     // 게임 리셋
     const resetGame = () => {
-        setLevel(5);
+        setLevel(LEVEL[0].level);
         setScore(0);
         setShuffle(!shuffle);
     };
