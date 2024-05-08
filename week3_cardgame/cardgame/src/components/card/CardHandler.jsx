@@ -8,6 +8,7 @@ export default function CardHandler({ level, updateScore, shuffle }) {
     const [selectedCard, setSelectedCard] = useState(null); // 전에 선택한 카드
     const [matchCards, setMatchCards] = useState([]); // 매칭된 카드들
     const [openCards, setOpenCards] = useState([]); // 오픈된 카드들 (선택한 카드 + 매칭된 카드들)
+    const IDNUM = 1000; // id충돌방지용 부여 넘버
 
     // 랜덤 카드 뽑기
     const getRandomElement = (arr) => {
@@ -26,8 +27,8 @@ export default function CardHandler({ level, updateScore, shuffle }) {
         const cardPairs = selectedCards.reduce(
             (acc, card) => [
                 ...acc,
-                { ...card, id: card.id + 1000 }, // ID 충돌 방지
-                { ...card, id: card.id + 2000 }, // ID 충돌 방지
+                { ...card, id: card.id + IDNUM }, // ID 충돌 방지
+                { ...card, id: card.id + IDNUM * 2 }, // ID 충돌 방지
             ],
             [],
         );
@@ -42,14 +43,13 @@ export default function CardHandler({ level, updateScore, shuffle }) {
     }, [level, shuffle]);
 
     function chooseCard(e, id) {
-        e.stopPropagation();
         // 매칭된 카드와 자기 자신은 선택 불가
         if (!matchCards.includes(id) && id !== selectedCard) {
             setOpenCards((prev) => [...prev, id]); // 카드 오픈
             if (!selectedCard) {
                 // 선택한 카드가 없을 때
                 setSelectedCard(id); // 선택한 카드에 추가
-            } else if (selectedCard % 1000 !== id % 1000) {
+            } else if (selectedCard % IDNUM !== id % IDNUM) {
                 // 카드가 매칭되지 않을 때
                 setTimeout(() => {
                     // 1초 지연
