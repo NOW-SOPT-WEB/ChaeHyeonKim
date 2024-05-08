@@ -12,7 +12,7 @@ export const CardWrapper = styled.section`
         padding: 1rem;
         backface-visibility: hidden; // 뒤집으면 안보이도록
         cursor: pointer;
-        border: 10px outset ${(props) => props.theme.colors.pink};
+        border: 10px outset ${({ theme }) => theme.colors.pink};
         border-radius: 15px;
     }
 

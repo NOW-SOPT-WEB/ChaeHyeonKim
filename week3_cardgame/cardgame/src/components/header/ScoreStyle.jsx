@@ -5,7 +5,7 @@ export const ScoreWrapper = styled.div`
     align-items: center;
     justify-content: center;
     font-size: 3rem;
-    color: ${(props) => props.theme.colors.white};
+    color: ${({ theme }) => theme.colors.white};
 `;
 export const MyScore = styled.p``;
 export const TargetScore = styled.p``;

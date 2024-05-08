@@ -16,7 +16,7 @@ export const Button = styled.button`
     }
 
     &:hover {
-        background-color: ${(props) => props.theme.colors.darkpink};
+        background-color: ${({ theme }) => theme.colors.darkpink};
         box-shadow: inset 0 1rem.5rem rgba(0, 0, 0, 0.25);
     }
 `;

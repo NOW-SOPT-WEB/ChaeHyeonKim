@@ -7,14 +7,14 @@ export const HeaderWrapper = styled.header`
     justify-content: center;
     gap: 1rem;
     height: 15rem;
-    background-color: ${(props) => props.theme.colors.pink};
+    background-color: ${({ theme }) => theme.colors.pink};
 `;
 
 export const Title = styled.h1`
     text-align: center;
     font-size: 5rem;
     font-weight: bold;
-    color: ${(props) => props.theme.colors.white};
+    color: ${({ theme }) => theme.colors.white};
 `;
 
 export const Reset = styled.button`
@@ -23,10 +23,10 @@ export const Reset = styled.button`
     top: 3rem;
     width: 15rem;
     height: 6rem;
-    background-color: ${(props) => props.theme.colors.grey};
+    background-color: ${({ theme }) => theme.colors.grey};
     border: none;
     border-radius: 20px;
-    color: ${(props) => props.theme.colors.pink};
+    color: ${({ theme }) => theme.colors.pink};
     cursor: pointer;
     font-size: 2rem;
     z-index: 1;

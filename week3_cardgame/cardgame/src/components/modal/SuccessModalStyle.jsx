@@ -19,7 +19,7 @@ export const ModalWrapper = styled.div`
     justify-content: center;
     width: 50rem;
     height: 10rem;
-    background-color: ${(props) => props.theme.colors.white};
+    background-color: ${({ theme }) => theme.colors.white};
     border-radius: 10px;
     font-size: 3rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -27,7 +27,7 @@ export const ModalWrapper = styled.div`
 
 export const ConfirmBtn = styled.button`
     padding: 10px 20px;
-    background-color: ${(props) => props.theme.colors.pink};
+    background-color: ${({ theme }) => theme.colors.pink};
     color: white;
     border: none;
     border-radius: 5px;
