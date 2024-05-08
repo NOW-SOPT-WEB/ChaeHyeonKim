@@ -46,7 +46,7 @@ export default function CardHandler({ level, updateScore, shuffle }) {
         // 매칭된 카드와 자기 자신은 선택 불가
         if (!matchCards.includes(id) && id !== selectedCard) {
             setOpenCards((prev) => [...prev, id]); // 카드 오픈
-            if (selectedCard == null) {
+            if (!selectedCard) {
                 // 선택한 카드가 없을 때
                 setSelectedCard(id); // 선택한 카드에 추가
             } else if (selectedCard % 1000 !== id % 1000) {
@@ -72,7 +72,7 @@ export default function CardHandler({ level, updateScore, shuffle }) {
     return (
         <CardContainer>
             {cards.map((card, index) => (
-                <CardWrapper key={index} onClick={(e) => chooseCard(e, card.id)}>
+                <CardWrapper key={`card-${index}`} onClick={(e) => chooseCard(e, card.id)}>
                     <Card img={card.img} open={openCards.includes(card.id)} />
                 </CardWrapper>
             ))}
