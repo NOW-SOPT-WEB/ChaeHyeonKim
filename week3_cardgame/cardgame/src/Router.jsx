@@ -7,16 +7,10 @@ export default function Router() {
     return (
         <>
             <BrowserRouter>
-                <GlobalWrapper>
-                    <Routes>
-                        <Route path="/" element={<GamePage />} />
-                    </Routes>
-                </GlobalWrapper>
+                <Routes>
+                    <Route path="/" element={<GamePage />} />
+                </Routes>
             </BrowserRouter>
         </>
     );
 }
-
-const GlobalWrapper = styled.main`
-    margin: 0 auto;
-`;
