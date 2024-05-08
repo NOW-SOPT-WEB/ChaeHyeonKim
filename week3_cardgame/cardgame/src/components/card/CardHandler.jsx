@@ -12,7 +12,6 @@ export default function CardHandler({ level, updateScore, shuffle }) {
 
     // 랜덤 카드 뽑기
     const getRandomElement = (arr) => {
-        console.log('getRandomElement');
         let result = new Set();
         while (result.size < level) {
             const randomElement = arr[Math.floor(Math.random() * arr.length)];
