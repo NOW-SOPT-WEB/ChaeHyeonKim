@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Card from './Card';
-import CARDLIST from './CardData';
+import CARDLIST from '../../constants/CardData';
 import styled from 'styled-components';
 
 export default function CardHandler({ level, updateScore, shuffle }) {
