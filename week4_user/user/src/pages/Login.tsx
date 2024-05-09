@@ -29,7 +29,7 @@ export default function Login() {
                 password: password,
             });
             if (response.status === 200) {
-                // 성공 로직
+                navigate('/home');
             }
         } catch (error: any) {
             if (error.response) {

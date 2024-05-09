@@ -12,6 +12,10 @@ const router = createBrowserRouter([
         path: '/signup',
         element: <Signup />,
     },
+    {
+        path: '/home',
+        element: <Home />,
+    },
 ]);
 
 export default function Router() {

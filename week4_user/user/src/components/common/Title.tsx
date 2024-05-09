@@ -1,7 +1,9 @@
+import * as T from './TitleStyle';
+
 interface TitleProps {
     text: string;
 }
 
 export default function Title({ text }: TitleProps) {
-    return <h2>{text}</h2>;
+    return <T.Title>{text}</T.Title>;
 }

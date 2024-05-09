@@ -5,12 +5,15 @@ export const Wrapper = styled.section`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    position: absolute;
-    top: calc(50vh - 10rem);
-    right: 50rem;
-    left: 50rem;
+    gap: 2rem;
 
-    height: 20rem;
+    position: absolute;
+    top: 30vh;
+    right: 30vw;
+    left: 30vw;
+
+    height: 40vh;
+    padding: 2rem 5rem;
 
     border: none;
     background-color: ${({ theme }) => theme.colors.white};
