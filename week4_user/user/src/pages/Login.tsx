@@ -29,7 +29,9 @@ export default function Login() {
                 password: password,
             });
             if (response.status === 200) {
-                navigate('/home');
+                const memberId = response.headers.location;
+                alert('로그인이 완료되었습니다.');
+                navigate(`/main/${memberId}`);
             }
         } catch (error: any) {
             if (error.response) {
