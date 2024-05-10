@@ -26,7 +26,7 @@ export default function Signup() {
         if (!id) {
             setFocus('id');
             return;
-        } else if (!password) {
+        } else if (!password || !validatePassword(password)) {
             setFocus('password');
             return;
         } else if (!nickname) {
@@ -46,7 +46,7 @@ export default function Signup() {
             });
             if (response.status === 201) {
                 alert('회원가입이 완료되었습니다');
-                navigate('/login');
+                navigate('/');
             }
         } catch (error: any) {
             if (error.response) {
@@ -69,6 +69,32 @@ export default function Signup() {
     const phoneAutoHyphen = (phone: string) => {
         return phone.replace(/[^0-9]/g, '').replace(/^(\d{3})(\d{4})(\d{4})$/, '$1-$2-$3');
     };
+
+    // 비밀번호 검증 유틸리티 함수
+    function validatePassword(password: any) {
+        const minLength = 8;
+        const hasNumbers = /\d/;
+        const hasEnglish = /[a-zA-Z]/;
+        const hasSpecial = /[!@#$%^&*(),.?":{}|<>]/;
+
+        if (password.length < minLength) {
+            alert('비밀번호는 최소 8자 이상이어야 합니다.');
+            return false;
+        }
+        if (!hasNumbers.test(password)) {
+            alert('비밀번호에는 최소 한 개의 숫자가 포함되어야 합니다.');
+            return false;
+        }
+        if (!hasEnglish.test(password)) {
+            alert('비밀번호에는 최소 한 개의 영어 알파벳이 포함되어야 합니다.');
+            return false;
+        }
+        if (!hasSpecial.test(password)) {
+            alert('비밀번호에는 최소 한 개의 특수 문자가 포함되어야 합니다.');
+            return false;
+        }
+        return true;
+    }
 
     return (
         <BoxContainer>
