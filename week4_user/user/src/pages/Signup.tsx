@@ -59,11 +59,7 @@ export default function Signup() {
     const goBack = () => {
         navigate(-1);
     };
-    const handlePhoneInput = (event: React.FormEvent<HTMLInputElement>) => {
-        const input = event.target as HTMLInputElement;
-        const formattedPhoneNumber = phoneAutoHyphen(input.value);
-        setPhone(formattedPhoneNumber);
-    };
+
     // 전화번호 자동으로 - 추가
     const phoneAutoHyphen = (phone: string) => {
         return phone
@@ -71,6 +67,9 @@ export default function Signup() {
             .replace(/^(\d{0,3})(\d{0,4})(\d{0,4})$/, '$1-$2-$3')
             .replace(/(\-{1,2})$/, '');
     };
+    useEffect(() => {
+        phoneAutoHyphen;
+    }, [phone]);
 
     return (
         <BoxContainer>
@@ -113,7 +112,6 @@ export default function Signup() {
                     id="phone"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    onInput={handlePhoneInput}
                     autoFocus={focus === 'phone'}
                 />
                 <InfoText text="전화번호는 010-xxxx-xxxx 형식입니다." />

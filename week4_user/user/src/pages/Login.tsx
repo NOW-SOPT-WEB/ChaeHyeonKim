@@ -56,6 +56,7 @@ export default function Login() {
     return (
         <BoxContainer>
             <Title text="Login" />
+            <img src="/login.png" width={100} />
             <div>
                 <Label text="ID" />
                 <Input type="text" id="username" value={username} onChange={(e) => setUsername(e.target.value)} />
