@@ -24,15 +24,19 @@ export default function Signup() {
 
     const handleSignup = async () => {
         if (!id) {
+            alert('id를 입력하세요.');
             setFocus('id');
             return;
         } else if (!password || !validatePassword(password)) {
+            alert('비밀번호를 바르게 입력하세요.');
             setFocus('password');
             return;
         } else if (!nickname) {
+            alert('닉네임을 입력하세요.');
             setFocus('nickname');
             return;
         } else if (!phone) {
+            alert('전화번호를 입력하세요.');
             setFocus('phone');
             return;
         }
