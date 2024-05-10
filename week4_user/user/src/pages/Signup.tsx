@@ -7,7 +7,7 @@ import ButtonWrapper from '../components/common/ButtonWrapper';
 import Title from '../components/common/Title';
 import Label from '../components/common/Label';
 import Input from '../components/common/Input';
-import InfoText from '../components/signup/InfoText';
+import InfoText from '../components/common/InfoText';
 
 export default function Signup() {
     const navigate = useNavigate();

@@ -7,22 +7,24 @@ import Title from '../components/common/Title';
 import Label from '../components/common/Label';
 import Input from '../components/common/Input';
 import { useState } from 'react';
+import InfoText from '../components/common/InfoText';
 
 export default function Login() {
     const navigate = useNavigate();
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [isUsername, setIsusername] = useState(true);
+    const [isPassword, setIspassword] = useState(true);
 
     const handleLogin = async () => {
         if (!username) {
-            alert('id를 입력해주세요.');
+            setIsusername(false);
+            return;
+        } else if (!password) {
+            setIsusername(true);
+            setIspassword(false);
             return;
         }
-        if (!password) {
-            alert('비밀번호를 입력해주세요.');
-            return;
-        }
-
         try {
             const response = await axios.post('http://34.64.233.12:8080/member/login', {
                 authenticationId: username,
@@ -41,6 +43,9 @@ export default function Login() {
             } else {
                 alert('요청 중 오류가 발생했습니다.');
             }
+        } finally {
+            setIsusername(true);
+            setIspassword(true);
         }
     };
 
@@ -54,10 +59,12 @@ export default function Login() {
             <div>
                 <Label text="ID" />
                 <Input type="text" id="username" value={username} onChange={(e) => setUsername(e.target.value)} />
+                {isUsername || <InfoText text="id를 입력해주세요." />}
             </div>
             <div>
                 <Label text="PW" />
                 <Input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                {isPassword || <InfoText text="비밀번호를 입력해주세요." />}
             </div>
             <ButtonWrapper>
                 <Button onClick={handleLogin}>로그인</Button>
