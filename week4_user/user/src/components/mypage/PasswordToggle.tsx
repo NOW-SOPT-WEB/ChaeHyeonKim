@@ -26,7 +26,6 @@ export default function PasswordToggle({ memberId }: PasswordToggleProps) {
         }
 
         try {
-            console.log(currentPassword);
             const response = await axios.patch(
                 'http://34.64.233.12:8080/member/password',
                 {
@@ -47,7 +46,6 @@ export default function PasswordToggle({ memberId }: PasswordToggleProps) {
                 setConfirmPassword('');
             }
         } catch (error: any) {
-            console.log(error);
             if (error.response) {
                 alert(error.response.data.message);
             } else {
