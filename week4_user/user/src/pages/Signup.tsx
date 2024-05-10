@@ -60,16 +60,15 @@ export default function Signup() {
         navigate(-1);
     };
 
+    const handlePhoneChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const formattedPhoneNumber = phoneAutoHyphen(event.target.value);
+        setPhone(formattedPhoneNumber);
+    };
+
     // 전화번호 자동으로 - 추가
     const phoneAutoHyphen = (phone: string) => {
-        return phone
-            .replace(/[^0-9]/g, '')
-            .replace(/^(\d{0,3})(\d{0,4})(\d{0,4})$/, '$1-$2-$3')
-            .replace(/(\-{1,2})$/, '');
+        return phone.replace(/[^0-9]/g, '').replace(/^(\d{3})(\d{4})(\d{4})$/, '$1-$2-$3');
     };
-    useEffect(() => {
-        phoneAutoHyphen;
-    }, [phone]);
 
     return (
         <BoxContainer>
@@ -111,7 +110,7 @@ export default function Signup() {
                     type="text"
                     id="phone"
                     value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
+                    onChange={handlePhoneChange}
                     autoFocus={focus === 'phone'}
                 />
                 <InfoText text="전화번호는 010-xxxx-xxxx 형식입니다." />

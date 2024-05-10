@@ -5,5 +5,5 @@ interface InfoTextProps {
 }
 
 export default function InfoText({ text }: InfoTextProps) {
-    return <I.Title>{text}</I.Title>;
+    return <I.Text>{text}</I.Text>;
 }
