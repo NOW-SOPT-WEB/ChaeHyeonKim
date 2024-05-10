@@ -6,8 +6,7 @@ import Video from '../components/main/Video';
 
 export default function Main() {
     const navigate = useNavigate();
-    const { memberId } = useParams(); // 파라미터에서 memberId 가져오기
-
+    const { memberId } = useParams<string>(); // 파라미터에서 memberId 가져오기
     function goMypage() {
         navigate(`/mypage/${memberId}`);
     }

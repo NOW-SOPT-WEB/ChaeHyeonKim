@@ -1,5 +1,5 @@
 import * as B from './ButtonStyle';
 
-export default function BoxContainer({ children }: any) {
+export default function ButtonWrapper({ children }: any) {
     return <B.ButtonWrapper>{children}</B.ButtonWrapper>;
 }

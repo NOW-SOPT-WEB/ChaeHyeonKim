@@ -1,8 +1,6 @@
-import { styled } from 'styled-components';
+import styled from 'styled-components';
 
-export const Video = styled.video`
-    display: block;
-
+export const Container = styled.div`
     width: 50vw;
-    margin: 10rem auto;
+    margin: 0 auto;
 `;

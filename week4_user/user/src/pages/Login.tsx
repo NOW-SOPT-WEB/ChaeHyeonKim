@@ -11,10 +11,10 @@ import InfoText from '../components/common/InfoText';
 
 export default function Login() {
     const navigate = useNavigate();
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-    const [isUsername, setIsusername] = useState(true);
-    const [isPassword, setIspassword] = useState(true);
+    const [username, setUsername] = useState<string>('');
+    const [password, setPassword] = useState<string>('');
+    const [isUsername, setIsusername] = useState<boolean>(true);
+    const [isPassword, setIspassword] = useState<boolean>(true);
 
     const handleLogin = async () => {
         if (!username) {

@@ -6,14 +6,14 @@ import axios from 'axios';
 import Button from '../common/Button';
 
 interface PasswordToggleProps {
-    memberId: number;
+    memberId: string;
 }
 
 export default function PasswordToggle({ memberId }: PasswordToggleProps) {
-    const [isOpen, setIsOpen] = useState(false);
-    const [currentPassword, setCurrentPassword] = useState('');
-    const [newPassword, setNewPassword] = useState('');
-    const [confirmPassword, setConfirmPassword] = useState('');
+    const [isOpen, setIsOpen] = useState<boolean>(false);
+    const [currentPassword, setCurrentPassword] = useState<string>('');
+    const [newPassword, setNewPassword] = useState<string>('');
+    const [confirmPassword, setConfirmPassword] = useState<string>('');
 
     const toggle = () => {
         setIsOpen(!isOpen);

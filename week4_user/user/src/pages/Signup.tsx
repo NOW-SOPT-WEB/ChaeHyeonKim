@@ -11,11 +11,11 @@ import InfoText from '../components/common/InfoText';
 
 export default function Signup() {
     const navigate = useNavigate();
-    const [id, setId] = useState('');
-    const [password, setPassword] = useState('');
-    const [nickname, setNickname] = useState('');
-    const [phone, setPhone] = useState('');
-    const [focus, setFocus] = useState('');
+    const [id, setId] = useState<string>('');
+    const [password, setPassword] = useState<string>('');
+    const [nickname, setNickname] = useState<string>('');
+    const [phone, setPhone] = useState<string>('');
+    const [focus, setFocus] = useState<string>('');
 
     useEffect(() => {
         const inputElement = document.getElementById(focus);
