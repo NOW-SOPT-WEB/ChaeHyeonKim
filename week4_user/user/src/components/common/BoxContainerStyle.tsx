@@ -8,11 +8,11 @@ export const Wrapper = styled.section`
     gap: 2rem;
 
     position: absolute;
-    top: 30vh;
+    top: 25vh;
     right: 30vw;
     left: 30vw;
 
-    height: 40vh;
+    height: 50vh;
     padding: 2rem 5rem;
 
     border: none;

@@ -7,6 +7,7 @@ import ButtonWrapper from '../components/common/ButtonWrapper';
 import Title from '../components/common/Title';
 import Label from '../components/common/Label';
 import Input from '../components/common/Input';
+import PasswordToggle from '../components/mypage/PasswordToggle';
 
 export default function Mypage() {
     const navigate = useNavigate();
@@ -59,6 +60,7 @@ export default function Mypage() {
                 <Label text="전화번호" />
                 <Input type="text" id="phone" value={userData.phone} readOnly />
             </div>
+            <PasswordToggle memberId={memberId} />
             <ButtonWrapper>
                 <Button type="button" onClick={goHome}>
                     홈버튼
