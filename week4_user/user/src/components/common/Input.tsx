@@ -1,3 +1,5 @@
+import * as I from './InputStyle';
+
 interface InputProps {
     type: string;
     id: string;
@@ -6,11 +8,12 @@ interface InputProps {
     onInput?: (e: React.FormEvent<HTMLInputElement>) => void;
     onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
     readOnly?: boolean;
+    autoFocus?: boolean;
 }
 
-export default function Input({ type, id, placeholder, value, onInput, onChange, readOnly }: InputProps) {
+export default function Input({ type, id, placeholder, value, onInput, onChange, readOnly, autoFocus }: InputProps) {
     return (
-        <input
+        <I.Input
             type={type}
             id={id}
             placeholder={placeholder || ''}
@@ -18,6 +21,7 @@ export default function Input({ type, id, placeholder, value, onInput, onChange,
             onChange={onChange}
             onInput={onInput}
             readOnly={readOnly}
+            autoFocus={autoFocus}
         />
     );
 }
